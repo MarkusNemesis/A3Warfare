@@ -17,7 +17,7 @@ class Mission
 	randomSeed=13141332;
 	class Intel
 	{
-		briefingName="A3 Mission Framework 0.1v";
+		briefingName="A3 Warfare 0.1v";
 		briefingDescription="by Markus.Davey";
 		resistanceWest=0;
 		startWeather=0;
