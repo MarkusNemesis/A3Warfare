@@ -22,12 +22,18 @@ MV_Con_ConCamera = [_bObj] call MV_Client_fnc_ConCreateCamera;
 // -- Init Event handlers
 MV_Con_KeyDownEH = (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call MV_Con_fnc_KeyDown;"];
 
+// -- Init variables
+MV_Con_SelectedItem = nil;
+MV_Con_SelectedItemRotation = nil;
+MV_Con_SelectedItem_DummyRoot = nil;
+MV_Con_SelectedItem_DummyObjects = nil;
+
 // -- Run the interface loop
 waitUntil 
 {
 	private ['_lookPos'];
 	_lookPos = screenToWorld [0.5, 0.5];
-	// -- Ensure a menu is displayed unless building
+	// ---- Ensure a menu is displayed unless building
 	if (commandingMenu == '' && isnil "MV_Con_SelectedItem") then
 	{ // -- Default to main menu.
 		if ([_bObj] call MV_Shared_fnc_IsHQ) then
@@ -65,7 +71,14 @@ waitUntil
 		};
 	};
 	
-	// ----
+	// ---- Handle the Builder leaving the build radius of the buildObject
+	if (player distance _bObj > 20) exitWith {[] call MV_Con_fnc_Exit;};
+	
+	// ---- Handle the Builder dying with the menu open
+	if (!alive player) exitWith {[] call MV_Con_fnc_Exit;};
+	
+	// ---- Handle the Build Object being destroyed with the menu open
+	if (!alive _bObj) exitWith {[] call MV_Con_fnc_Exit;};
 	
 	// -- Leave last
 	isnil 'MV_Con_ConCamera'

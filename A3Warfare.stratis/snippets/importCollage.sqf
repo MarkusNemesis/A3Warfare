@@ -15,7 +15,7 @@ _spawnLoc set [2,0];
 hint str _spawnLoc;
 _direction = (getDir player) - 180;
 
-_dummy = createVehicle["b_survivor_F",_spawnLoc,[],0,"NONE"];
+_dummy = createVehicle["Helper_Base_F",_spawnLoc,[],0,"CAN_COLLIDE"];
 _dummy setDir _direction;
 _dummy setVectorUp surfaceNormal _spawnLoc;
 {
@@ -30,7 +30,7 @@ _dummy setVectorUp surfaceNormal _spawnLoc;
 	diag_log format["Loc: %1 - %2",_location,_class];
 	diag_log format["Dummy: %1 - %2",getPosASL _dummy,_class];
 	
-	_obj = createVehicle[_class,_location,[],0,"NONE"];
+	_obj = createVehicle[_class,_location,[],0,"CAN_COLLIDE"];
 	_obj setPosASL _location;
 	
 	_obj setDir _rotation;

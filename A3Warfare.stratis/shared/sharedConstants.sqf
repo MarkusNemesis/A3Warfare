@@ -50,6 +50,11 @@ _lObj setVariable ["MV_Shared_CLASS_EAST_TRUCK", "O_Truck_02_transport_F"];
 _lObj setVariable ["MV_Shared_CLASS_WEST_AMBO","B_Truck_01_medical_F"];
 _lObj setVariable ["MV_Shared_CLASS_EAST_AMBO","O_Truck_02_medical_F"];
 
+// -- Buildings
+MV_Shared_CLASS_BUILD_DUMMY = "Land_VR_Block_02_F";
+MV_Shared_CLASS_BUILD_DUMMY_ARROW = "VR_3DSelector_01_default_F";
+
+
 // _lObj setVariable ["",];
 
 // leave last

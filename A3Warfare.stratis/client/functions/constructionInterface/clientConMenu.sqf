@@ -15,9 +15,10 @@ MV_Con_SelectedItem = [class variable / string, [offset vector], offset directio
 // ------ Construction Menus
 
 // ---- Deploy HQ
+// TODO - Pull the dummy array and put it into a variable so I don't need to copy paste it for every single buildable object
 Con_HQ_Deploy = [
 ["Menu",false],
-	["Deploy HQ",[2],"",-5,[["expression","call compile format ['MV_Con_SelectedItem = [[MV_Shared_CLASS_%1_HQ_Deployed, [0,0,0], 0]]', side player]"]],"1","1"]
+	["Deploy HQ",[2],"",-5,[["expression","call compile 'MV_Con_SelectedItem = [[MV_Shared_CLASS_BUILD_DUMMY, [0,0,0], 0], [MV_Shared_CLASS_BUILD_DUMMY_ARROW,[0,15,0],0]];'"]],"1","1"]
 ];
 
 Con_HQ_Deployed = [
