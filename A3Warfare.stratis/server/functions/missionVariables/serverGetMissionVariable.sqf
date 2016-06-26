@@ -3,7 +3,7 @@ Created: 19/03/2013
 Author: Markus Davey
 Skype: markus.davey
 Desc: Simply gets a Server_LocObj subarray from the user's personal Server_LocObj array.
-1. Iterate through the user's misisonnamespace array in search of the specific array type.
+1. Iterate through the user's missionnamespace array in search of the specific array type.
 1.1 If found, assign _x to a variable and return it
 2. If not found, return objNull.
 Params: ['netID', 'arrayType'];

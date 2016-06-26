@@ -20,6 +20,10 @@ if (isServer) then
 // Constants
 _lObj setVariable ["PRIOR_RANGE", 8];
 
+// Commanders
+_lObj setVariable ["MV_Commander_West",objNull];
+_lObj setVariable ["MV_Commander_East",objNull];
+
 // Player slots
 _lObj setVariable ["MV_Shared_PLAYERS_BLU", []];
 _lObj setVariable ["MV_Shared_PLAYERS_OP", []];

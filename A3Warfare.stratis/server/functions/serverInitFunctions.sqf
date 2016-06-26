@@ -32,4 +32,8 @@ MV_Server_fnc_RemoveObjectMissionVariableArray = Compile preprocessFileLineNumbe
 // -- Event Handlers
 MV_Server_fnc_CommVarEH = Compile preprocessFileLineNumbers "Server\functions\serverCommVarEH.sqf";
 
+// -- Commanding
+MV_Server_fnc_SetCommander = Compile preprocessFileLineNumbers "Server\functions\commanding\serverSetCommander.sqf";
+MV_Server_fnc_GetCommander = Compile preprocessFileLineNumbers "Server\functions\commanding\serverGetCommander.sqf";
+
 // MV_Server_fnc_ = Compile preprocessFileLineNumbers "server\functions\server .sqf";
