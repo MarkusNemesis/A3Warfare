@@ -19,6 +19,7 @@ _side = _this select 0;
 _player = Call compile (_this select 1);
 
 // Check if player is an actual player
+if (!isPlayer _player) exitWith {diag_log format["ERROR: Attempted to set %1 commander to object %2", str _side, _player];};
 
 // Set the _sLoc variable for the current side's commander.
 switch (_side) do
