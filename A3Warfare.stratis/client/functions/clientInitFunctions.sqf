@@ -25,4 +25,11 @@ MV_Client_fnc_HitEH = Compile preprocessFile "client\functions\clientHitEH.sqf";
 MV_Client_fnc_CommVarEH = Compile preprocessFileLineNumbers "client\functions\clientCommVarEH.sqf";
 MV_Client_fnc_PublicCommVarEH = Compile preprocessFileLineNumbers "client\functions\clientPublicCommVarEH.sqf";
 
+// -- Construction interface
+MV_Client_fnc_ConCreateCamera = compileFinal preprocessFileLineNumbers "client\functions\constructionInterface\clientConCreateCamera.sqf";
+MV_Client_fnc_ConFunctions = compileFinal preprocessFileLineNumbers "client\functions\constructionInterface\clientConFunctions.sqf";
+MV_Client_fnc_ConInitInterface = compileFinal preprocessFileLineNumbers "client\functions\constructionInterface\clientConInitInterface.sqf";
+MV_Client_fnc_ConInterfaceRuntime = compileFinal preprocessFileLineNumbers "client\functions\constructionInterface\clientConInterfaceRuntime.sqf";
+MV_Client_fnc_ConMenu = compileFinal preprocessFileLineNumbers "client\functions\constructionInterface\clientConMenu.sqf";
+
 // MV_Client_fnc_ = Compile preprocessFile "client\functions\client .sqf";
