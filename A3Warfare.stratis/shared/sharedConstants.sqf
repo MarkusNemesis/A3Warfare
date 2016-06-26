@@ -21,10 +21,10 @@ if (isServer) then
 _lObj setVariable ["PRIOR_RANGE", 8];
 
 // Commanders
-_lObj setVariable ["MV_Commander_West",objNull];
-_lObj setVariable ["MV_Commander_East",objNull];
-MV_Commander_West = objNull;
-MV_Commander_East = objNull;
+_lObj setVariable ["MV_Commander_West",""];
+_lObj setVariable ["MV_Commander_East",""];
+MV_Commander_West = "";
+MV_Commander_East = "";
 
 // Player slots
 _lObj setVariable ["MV_Shared_PLAYERS_BLU", []];

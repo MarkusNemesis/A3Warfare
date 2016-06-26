@@ -11,6 +11,7 @@ MV_Client_fnc_RemoveEvent = Compile preprocessFile "client\functions\clientRemov
 MV_Client_fnc_SpawnPlayer = Compile preprocessFile "client\functions\clientSpawnPlayer.sqf";
 MV_Client_fnc_KillMessage = Compile preprocessFile "client\functions\clientKillMessage.sqf";
 MV_Client_fnc_SendServerMessage = Compile preprocessFileLineNumbers "client\functions\clientSendServerMessage.sqf";
+MV_Client_fnc_GetCommander = Compile preprocessFile "client\functions\clientGetCommander.sqf";
 
 // Variables handling
 MV_Client_fnc_SetMissionVariable = Compile preprocessFileLineNumbers "client\functions\clientVariables\clientSetMissionVariable.sqf";

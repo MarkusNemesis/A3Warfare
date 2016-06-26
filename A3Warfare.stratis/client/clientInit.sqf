@@ -37,6 +37,7 @@ Client_SpawnType = "first";
 Client_PlayerSpawned = false;
 Client_HitArray = []; // Stores all the 'hits' the player receives and is collated on player death and sent to the server the top 3 damage sources by %.
 Client_EventArray = []; // Client_EventArray elements contain: ["function_name", [args], priority] 
+Client_HQAction = -1; // Stores the HQ Build addaction ID, if the player is commander. Default is -1
 
 // Declare client's commVar
 call compile format ["%1_CommVar = '';", Client_PlayerSlotStr];

@@ -59,5 +59,28 @@ if (diag_frameno % 8 == 0) then
 // -------- Run Priority Second - Runs every second --------
 if ((call MV_Shared_fnc_GetServerTimeInt) > clientLastSecond) then
 {
+	// Check if the player is commander
+	if (Client_PlayerSlotStr == ([Client_PlayerSide] call MV_Client_fnc_getCommander)) then {
+		// If the player is commander, and does not already have it, create the addaction for the HQ build menu
+		if (Client_HQAction == -1) then { // TODO - On death, remove this addaction because the player object would have changed
+			Client_HQAction = player addAction [
+				"HQ - Build Menu",
+				{[[Client_PlayerSide] call MV_Shared_fnc_getHQ] call MV_Client_fnc_ConInitInterface},
+				"",
+				6,
+				false,
+				true,
+				"",
+				"player distance ([Client_PlayerSide] call MV_Shared_fnc_getHQ) < 20"
+			];
+		};
+	} else { // if the player is not the commander, but has the addaction. Remove it.
+		if (Client_HQAction != -1) then {
+			player removeAction Client_HQAction;
+			Client_HQAction = -1;
+		};
+	};
 	
+	// Leave last
+	clientLastSecond = call MV_Shared_fnc_GetServerTimeInt;
 };
