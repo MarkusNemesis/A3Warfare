@@ -26,8 +26,12 @@ switch (_side) do
 {
 	case west: {
 		_sLoc setVariable ["MV_Commander_West",_player];
+		MV_Commander_West = str _player;
+		publicVariable "MV_Commander_West";
 	};
 	case east: {
 		_sLoc setVariable ["MV_Commander_East",_player];
+		MV_Commander_East = str _player;
+		publicVariable "MV_Commander_East";
 	};
 };

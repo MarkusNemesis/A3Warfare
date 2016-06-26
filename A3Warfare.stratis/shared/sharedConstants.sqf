@@ -23,6 +23,8 @@ _lObj setVariable ["PRIOR_RANGE", 8];
 // Commanders
 _lObj setVariable ["MV_Commander_West",objNull];
 _lObj setVariable ["MV_Commander_East",objNull];
+MV_Commander_West = objNull;
+MV_Commander_East = objNull;
 
 // Player slots
 _lObj setVariable ["MV_Shared_PLAYERS_BLU", []];
