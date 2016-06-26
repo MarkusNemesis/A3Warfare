@@ -64,6 +64,9 @@ call MV_Server_fnc_initPlayerSlots;
 call MV_Server_fnc_SpawnStartingVehicles;
 
 // YOU MUST Leave this last. This calls the serverCore mainloop.
+MV_Netvar_SERVERINITCOMPLETE = true;
+publicVariable "MV_Netvar_SERVERINITCOMPLETE";
+
 _runTime = time - _runTime;
 diag_log format ["MV: server INIT: FINISHED, Time taken: %1", _runTime];
 
