@@ -24,9 +24,9 @@ MV_Con_KeyDownEH = (findDisplay 46) displayAddEventHandler ["KeyDown", "_this ca
 
 // -- Init variables
 MV_Con_SelectedItem = nil;
+MV_Con_SelectedItemType = nil;
 MV_Con_SelectedItemRotation = nil;
 MV_Con_SelectedItem_DummyRoot = nil;
-MV_Con_SelectedItem_DummyObjects = nil;
 
 // -- Run the interface loop
 waitUntil 
@@ -57,15 +57,21 @@ waitUntil
 		// -- Disable the commanding menu
 		showCommandingMenu "";
 		
-		if (!isNil "MV_Con_SelectedItem_DummyObjects") then
-		{ // -- Update current dummy object positions
+		// -- Test the validity of the structure's placement.
+		if (!isnil MV_Con_SelectedItem_DummyRoot) then {
+			[_lookpos, _bObj] call MV_Con_fnc_ValidLocation;
+		};
+		
+		if (!isNil "MV_Con_SelectedItem_DummyRoot") then
+		{
+			// -- Update current dummy object positions
 			[_lookpos] call MV_Con_fnc_UpdateDummyObjects;
 		} else {
 		  // -- else, create the dummy objects
 			[_lookpos] call MV_Con_fnc_CreateDummyObjects;
 		};
 	} else {
-		if (!isnil "MV_Con_SelectedItem_DummyObjects") then
+		if (!isnil "MV_Con_SelectedItem_DummyRoot") then
 		{ // -- If we have no selection, but we have dummy objects, then delete the dummy objects
 			[] call MV_Con_fnc_DeleteDummyObjects;
 		};

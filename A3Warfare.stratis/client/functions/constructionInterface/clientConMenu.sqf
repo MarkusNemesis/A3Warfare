@@ -7,7 +7,8 @@ Custom menus can have script embedded in them. IE, "call compile 'script here et
 Parameters: N/A
 Return: N/A
 Notes:
-MV_Con_SelectedItem = [class variable / string, [offset vector], offset direction];
+MV_Con_SelectedItem = [class variable / string]; - Default ""
+MV_Con_SelectedItemType = String - "BUILDING", "OTHER"
 
  // -- TODO -- Define building profiles in shared.
 */
@@ -18,7 +19,7 @@ MV_Con_SelectedItem = [class variable / string, [offset vector], offset directio
 // TODO - Pull the dummy array and put it into a variable so I don't need to copy paste it for every single buildable object
 Con_HQ_Deploy = [
 ["Menu",false],
-	["Deploy HQ",[2],"",-5,[["expression","call compile 'MV_Con_SelectedItem = [[MV_Shared_CLASS_BUILD_DUMMY, [0,0,0], 0], [MV_Shared_CLASS_BUILD_DUMMY_ARROW,[0,15,0],0]];'"]],"1","1"]
+	["Deploy HQ",[2],"",-5,[["expression","call compile 'MV_Con_SelectedItemType = 'BUILDING'; MV_Con_SelectedItem = [""];'"]],"1","1"]
 ];
 
 Con_HQ_Deployed = [

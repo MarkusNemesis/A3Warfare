@@ -19,6 +19,6 @@ _camera camCommitPrepared 0;
 cameraEffectEnableHUD true;
 _camera setdir getDir player;
 [_camera,-30,0] call BIS_fnc_setPitchBank;
-_camera camConstuctionSetParams [getPosATL _obj, 100, 20]; // -- TODO replace 100 with the param value for base radius limit.
+_camera camConstuctionSetParams [getPosATL _obj, MV_Shared_Base_Radius_Limit, 20];
 
 _camera
